@@ -53,3 +53,32 @@ Auxiliary Space Complexity: O(1)
 
 Using a native sorting method is not allowed.
 */
+
+function sortColors(arr) {
+  var zeros = 0, ones = 0, twoes = 0;
+  
+  for(var i = 0; i <arr.length; i++) {
+    if(arr[i] === 0) zeros++;
+    if(arr[i] === 1) ones++;
+    if(arr[i] === 2) twoes++;
+  }
+  
+  for(var j = 0; j < arr.length; j++) {
+    if(zeros) {
+      arr[j] = 0;
+      zeros--;
+    }
+    else if(!zeros && ones) {
+      arr[j] = 1;
+      ones--;
+    }
+    else if(!zeros && !ones && twoes) {
+      arr[j] = 2;
+      twoes--;
+    }
+  }
+  return arr;
+}
+console.log('sortColors: ', sortColors([2,1,0,0,1,2]));
+ 
+//====================================================================================================
