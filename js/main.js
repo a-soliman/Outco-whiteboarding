@@ -97,3 +97,32 @@ Auxiliary Space Complexity: O(1)
 
 A linear search is not acceptable for runtime.
 */
+
+function numOfOnes(arr) {
+  //edge cases
+  if(arr[arr.length-1] === 0) {
+    return 0;
+  }
+  var start = 0, end = arr.length-1, target =1, mid;
+  
+  while(start <= end) {
+    mid = Math.floor((start + end) /2);
+    
+    if(arr[mid] === 1 && (arr[mid-1] === 0 || mid === 0)) {
+      return arr.length - mid;
+    } else if(arr[mid] === 0 && arr[mid+1] === 1) {
+      mid = mid+1;
+      return arr.length - mid;
+    } else if (arr[mid] === 0 && arr[mid+1] === 0) {
+      start = mid + 1;
+    } else if(arr[mid] === 1 && arr[mid-1] ===1) {
+      end = mid - 1;
+    }
+  }
+  
+}
+
+console.log('NumberOfOnes : ' + numOfOnes([0,0,0,1,1,1]));
+
+
+//====================================================================================================
