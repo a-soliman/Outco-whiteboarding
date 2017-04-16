@@ -140,3 +140,49 @@ Time Complexity: O(N)
 Auxiliary Space Complexity: O(1)
 
 */
+
+function subarraySort(arr) {
+  var start, end, minV, maxV, result = Array(2), len = arr.length;
+  //find the start of the subarray
+  for(var i = 0; i < len; i++) {
+    if(arr[i] > arr[i+1]) {
+      start = i;
+      break;
+    }
+  }
+  //find the end
+  for(i = len; i >= 0; i--) {
+    if(arr[i] < arr[i+1]) {
+      end = i;
+      break;
+    }
+  }
+  //find min
+  for(i = start; i <= end; i++) {
+    if(minV === undefined || arr[i] < minV) {
+      minV = arr[i];
+    }
+  }
+  //find max
+  for(i = end; i >= start; i--) {
+    if(maxV === undefined || arr[i] > maxV) {
+      maxV = arr[i];
+    }
+  }
+  //check for <min and >max
+  for(i = 0; i < len; i++) {
+    if(arr[i] > minV) {
+      result[0] = i;
+      break;
+    }
+  }
+  for(i = len; i >= 0; i--) {
+    if(arr[i] < maxV) {
+      result[1] = i;
+      break;
+    }
+  }
+  return result;
+}
+console.log('subarraySorted : ', subarraySort([3, 4, 8, 7, 20, 6, 17]));
+//=======================================================================================================================
