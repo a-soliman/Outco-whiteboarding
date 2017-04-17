@@ -206,4 +206,25 @@ value: integer value of the node
 Values of the nodes will be integers
 
 */
+function reverseLinkedList(linkedList) {
+  var current = linkedList.head, temp;
+  var nextNode;
+  var temporaryHead = linkedList.head;
+  linkedList.head = linkedList.tail;
+  linkedList.tail = temporaryHead;
+  
+  while(current !== null) {
 
+      nextNode = current.next;
+    
+    if(temp) {
+      current.next = temp;
+    } else {
+      current.next = null;
+    }
+    
+    temp = current;
+    current = nextNode;
+  }
+  return linkedList;
+}
