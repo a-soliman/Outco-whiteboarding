@@ -186,3 +186,24 @@ function subarraySort(arr) {
 }
 console.log('subarraySorted : ', subarraySort([3, 4, 8, 7, 20, 6, 17]));
 //=======================================================================================================================
+/*
+Reverse a Singly Linked List
+Given a singly linked list, return the linked list in reversed
+
+Input: 	  Linked List
+Output:  Linked List
+Example
+Input: 	{1} -> {2} -> {3} -> {4}
+Output:	{4} -> {3} -> {2} -> {1}
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(1)
+The linked list has the following properties
+head : pointer to the head node
+Each node in the linked list has the following properties
+next: pointer to the next node in the linked list, the default would be null
+value: integer value of the node
+Values of the nodes will be integers
+
+*/
+
