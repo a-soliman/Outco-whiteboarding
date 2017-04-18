@@ -228,3 +228,22 @@ function reverseLinkedList(linkedList) {
   }
   return linkedList;
 }
+
+
+//===============================================================================================================================
+/*
+Integer to Roman
+Given an integer from 1 to 3999, return the roman numeral equivalent
+
+Input:     Integer
+Output:  String
+
+M = 1000, D = 500, C = 100, L = 50, X = 10, V = 5, I = 1
+Example
+Input: 9     	=>	Output: ‘IX’
+Input: 8     	=>	Output: ‘VIII’
+Input: 49     	=>	Output: ‘XLIX’ 		
+Constraints
+Time Complexity: O(1)
+Auxiliary Space Complexity: O(1) 
+*/  
