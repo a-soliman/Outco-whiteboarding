@@ -247,3 +247,27 @@ Constraints
 Time Complexity: O(1)
 Auxiliary Space Complexity: O(1) 
 */  
+
+function intToRoman(num) {
+  // edge cases
+  if(num < 1 || num > 3999) {
+    return "";
+  }
+  var roman = ["M","CM", "D", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+  var values = [1000, 900, 500, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var i = 0;
+  var result = "";
+  
+  while(num > 0) {
+    while(num >= values[i]) {
+      num = num - values[i];
+      result += roman[i];
+    }
+    i++;
+  }
+  return result;
+}
+  
+console.log('Int To Roman : ' + intToRoman(49));
+
+//===============================================================================================================================
