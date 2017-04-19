@@ -271,3 +271,50 @@ function intToRoman(num) {
 console.log('Int To Roman : ' + intToRoman(49));
 
 //===============================================================================================================================
+
+/*
+Toeplitz Matrix
+Given a square matrix, find if it is a Toeplitz matrix or not.
+A Toeplitz (or diagonal-constant) matrix is a matrix where each descending diagonal from left to right is constant (i.e., all elements in a diagonal are same).
+
+Input: An N x N matrix
+Output: Boolean
+Example
+Input:    [[3, 4, 5, 6],
+		[2, 3, 4, 5],
+		[1, 2, 3, 4],
+		[0, 1, 2, 3]]
+=>	Output: True
+Constraints
+Time Complexity: O(N^2)
+Auxiliary Space Complexity: O(1)
+
+Remember, for a matrix to be considered a toeplitz, the elements in each descending diagonal must be the same.
+*/
+
+var matrix = [[3, 4, 5, 6],
+        		  [2, 3, 4, 5],
+        		  [1, 2, 3, 4],
+        		  [0, 1, 2, 3]
+        		];
+        		
+function isToeplitz(arr) {
+  if(arr.length <= 1) { return null; }
+  var i = 0, j = 0;
+  
+  while( i <= arr.length-2) {
+    if(arr[i][j] !== arr[i+1][j+1]) { return false; }
+    if(j === arr.length -2) {
+      i++;
+      j = 0;
+    } else {
+      j++;
+    }
+  }
+  return true;
+}
+
+console.log('isToeplitz: ' + isToeplitz(matrix))
+
+//===============================================================================================================================
+
