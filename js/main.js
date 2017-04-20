@@ -317,4 +317,63 @@ function isToeplitz(arr) {
 console.log('isToeplitz: ' + isToeplitz(matrix))
 
 //===============================================================================================================================
+/*
+Longest Path of a Binary Tree
+Given a binary tree root node, return the number of nodes in the longest path between the root and a leaf node
 
+Input: 	  Node in a Binary Tree
+Output:  Integer
+Example
+Input: 	     Output:	 3 (from path 1 -> 3 -> 4)
+
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(N)
+The binary tree node has the following properties:
+value : an integer
+leftChild : default null
+rightChild : default null
+*/
+
+/*
+
+
+-------------------------------------------------------------------------------
+---- Building BST ----
+-------------------------------------------------------------------------------
+*/
+
+function BST(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+BST.prototype.insert = function(value) {
+  var newNode = new BST(value);
+  
+  if(value <= this.value) {
+    if(!this.left) {
+      this.left = newNode;
+    }else {
+      this.left.insert(value);
+    }
+  } else if(value > this.value) {
+    if(!this.right) {
+      this.right = newNode;
+    } else {
+      this.right.insert(value);
+    }
+  }
+};
+var bst = new BST(4);
+bst.insert(3);
+bst.insert(5)
+bst.insert(6)
+
+//console.log(bst)
+
+/*
+-------------------------------------------------------------------------------
+---- End BST ----
+-------------------------------------------------------------------------------
+*/
