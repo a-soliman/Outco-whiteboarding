@@ -377,3 +377,20 @@ bst.insert(6)
 ---- End BST ----
 -------------------------------------------------------------------------------
 */
+
+
+function longestPath(root) {
+  var max = 0;
+  function search(node, length) {
+    if(!node) {  return;}
+    max = Math.max(max, length);
+    
+    search(node.left, length+1);
+    search(node.right, length+1);
+  }
+  search(root, 1);
+  return max;
+}
+
+console.log('longestPath : ' + longestPath(bst));
+//===============================================================================================================================
