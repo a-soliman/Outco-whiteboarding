@@ -413,3 +413,34 @@ rightChild : default null
 Must swap the entire node instances, not just the value
 */
 
+function invertTree(root) {
+  
+  function invert(node) {
+    if(!node) { return; }
+    
+    if(node.left && !node.right) {
+      node.right = node.left;
+      node.left = null;
+      invert(node.left);
+    }
+    if(node.right && !node.left) {
+      node.left = node.right;
+      node.right = null;
+      invert(node.right);
+    }
+    if(node.left && node.right) {
+      var temp = node.left;
+      node.left = node.right;
+      node.right = temp;
+      invert(node.left);
+      invert(node.right);
+    }
+  }
+  invert(root)
+  return root;
+}
+console.log(bst)
+//invertTree(bst)
+//===============================================================================================================================
+
+
