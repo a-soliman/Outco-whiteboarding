@@ -394,3 +394,22 @@ function longestPath(root) {
 
 console.log('longestPath : ' + longestPath(bst));
 //===============================================================================================================================
+/*
+Invert a Binary Tree
+Given a binary tree root node, invert the binary tree (mirror) and return back the root node.
+
+Input: 	  Node in a Binary Tree
+Output:  Node in a Binary Tree
+Example
+Input: 	     Output:	 
+
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(N)
+The binary tree node has the following properties:
+value : an integer
+leftChild : default null
+rightChild : default null
+Must swap the entire node instances, not just the value
+*/
+
