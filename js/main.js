@@ -446,3 +446,29 @@ console.log(bst)
 
 //Is Valid Tree
 
+
+function isValidTree(root) {
+  var values = [];
+  function traverse(node) {
+    if(node.left) {
+      traverse(node.left);
+    }
+    values.push(node.value);
+    if(node.right) {
+      traverse(node.right);
+    }
+  }
+  traverse(root);
+  
+  for(var i = 0; i < values.length; i++) {
+    if(values[i] > values[i+1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log('isValidTree : ' + isValidTree(bst))
+//===============================================================================================================================
+
+
