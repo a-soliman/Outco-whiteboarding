@@ -487,3 +487,10 @@ Auxiliary Space Complexity: O(N)
 
 Integer values of nodes are all distinct.
 */
+
+var bst2 = new BST(5);
+bst2.left = new BST(2);
+bst2.right = new BST(7);
+bst2.right.left = new BST(4);
+bst2.right.right = new BST(8);
+bst2.right.right.right = new BST(9);
