@@ -494,3 +494,33 @@ bst2.right = new BST(7);
 bst2.right.left = new BST(4);
 bst2.right.right = new BST(8);
 bst2.right.right.right = new BST(9);
+
+
+function lowestCommonAncestor(root, node1, node2) {
+  var LCA, i = 0, path1 = [], path2 = [];
+  
+  function traverse(n1, n2, path) {
+    if(!n1) { return false; }
+    path.push(n1.value);
+    if(n1.value === n2) { return true; }
+    if(n1.left && traverse(n1.left, n2, path) || n1.right && traverse(n1.right, n2, path)) {
+      return true;
+    }
+    path.pop();
+    return false;
+  }
+  traverse(root, node1, path1);
+  traverse(root, node2, path2);
+  
+  //compare
+  while( i < Math.min(path1.length, path2.length)) {
+    if(path1[i] === path2[i]) {
+      LCA = path1[i];
+    }
+    i++;
+  }
+  return LCA;
+}
+console.log('lowestCommonAncestor : ' + lowestCommonAncestor(bst2, 4,9));
+
+//===============================================================================================================================
