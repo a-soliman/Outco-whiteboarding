@@ -524,3 +524,22 @@ function lowestCommonAncestor(root, node1, node2) {
 console.log('lowestCommonAncestor : ' + lowestCommonAncestor(bst2, 4,9));
 
 //===============================================================================================================================
+
+/*
+Kth Largest in a BST
+Given a binary search tree root node and an integer K, return the Kth largest value
+
+Input: 	  Node in a Binary Search Tree, Positive integer K
+Output:  Integer
+Example
+Input: root node, 3	  => 	Output:	6
+Input: root node, 5	  => 	Output:	4
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(N)
+The binary tree node has the following properties:
+value : an integer
+leftChild : default null
+rightChild : default null
+Not allowed to modify the binary search tree
+*/
