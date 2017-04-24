@@ -551,3 +551,31 @@ bst3.insert(2)
 bst3.insert(7)
 bst3.insert(6)
 bst3.insert(9)
+
+
+function kthLargestInBST(root, k) {
+  var values = [];
+  var pointer = 0;
+  //traverse depth in order;
+  function traverse(node, arr) {
+    if(node.left) {
+      traverse(node.left, arr);
+    }
+    arr.push(node.value)
+    if(node.right) {
+      traverse(node.right, arr);
+    }
+  }
+  traverse(root, values);
+  
+  for(var i = values.length-1; i >=0; i--) {
+    pointer++;
+    if(pointer === k) {
+      return values[i];
+    }
+  }
+}
+
+console.log('kthLargestInBST : ' + kthLargestInBST(bst3, 3));
+//===============================================================================================================================
+
