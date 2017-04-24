@@ -543,3 +543,11 @@ leftChild : default null
 rightChild : default null
 Not allowed to modify the binary search tree
 */
+
+
+var bst3 = new BST(5)
+bst3.insert(4)
+bst3.insert(2)
+bst3.insert(7)
+bst3.insert(6)
+bst3.insert(9)
