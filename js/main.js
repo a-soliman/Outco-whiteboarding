@@ -579,3 +579,29 @@ function kthLargestInBST(root, k) {
 console.log('kthLargestInBST : ' + kthLargestInBST(bst3, 3));
 //===============================================================================================================================
 
+function kthLargestInBST2(root, k) {
+  var pointer = 0;
+  var value;
+  
+  //traverse depth in order;
+  function traverse(node) {
+    if(!node) {return false}
+    if(node.right) {
+      traverse(node.right);
+    }
+    pointer++;
+    if(pointer === k) {
+      value = node.value;
+      return;
+    }
+    if(node.left) {
+      traverse(node.left);
+    }
+  }
+  traverse(root);
+  return value
+}
+
+console.log('kthLargestInBSTWo : ' + kthLargestInBST2(bst3, 3));
+//===============================================================================================================================
+
