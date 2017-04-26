@@ -623,3 +623,66 @@ Auxiliary Space Complexity: O(log(N))
 
 All elements of the array are unique
 */
+
+function sortedRotatedArraySearch(arr, target) {
+  var start = 0, end = arr.length-1;
+  var pivot, mid;
+  
+  //find a pivot
+  while(start < end) {
+    mid = Math.floor((start + end) /2);
+    
+    if(arr[mid] > arr[mid+1]) {
+      pivot = mid;
+      break;
+    }
+    else if(arr[mid] < arr[mid-1]) {
+      pivot = mid-1;
+      break;
+    }
+    else if(arr[start] < arr[mid]) {
+      start = mid+1;
+    }
+    else if(arr[start] > arr[mid]) {
+      end = mid-1
+    }
+  }
+  //serach arr 1
+  start = 0, end = pivot+1;
+  
+  while(start < end) {
+    mid = Math.floor((start + end) /2);
+    
+    if(target === arr[mid]) {
+      return mid;
+    }
+    else if(arr[mid] < target){
+      start = mid+1;
+    }
+    else if(arr[mid] > target) {
+      end = mid;
+    }
+  }
+  
+  //search arr2
+  start = pivot+1, end = arr.length;
+  
+  while(start < end) {
+    mid = Math.floor((start + end) /2);
+    
+    if(target === arr[mid]) {
+      return mid;
+    }
+    else if(arr[mid] < target) {
+      start = mid+1;
+    }
+    else if(arr[mid] > target) {
+      end = mid;
+    }
+  }
+  return -1;
+
+}
+
+console.log('sortedRotatedArraySearch : ' + sortedRotatedArraySearch([6,8,11,15,17,3,4,5],3))
+//===============================================================================================================================
