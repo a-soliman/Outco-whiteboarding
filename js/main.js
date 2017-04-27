@@ -701,3 +701,22 @@ Time Complexity: O(N)
 Auxiliary Space Complexity: O(1)
 All elements are positive
 */
+function subarraySum (arr, value) {
+  var currentSum = arr[0];
+  var i = 1;
+  while(i < arr.length) {
+    if(currentSum < value) {
+      currentSum += arr[i];
+    }
+    if(currentSum > value) {
+      currentSum = arr[i];
+    }
+    if(currentSum === value) {return true;}
+    i++;
+  }
+  return false;
+}
+console.log('SubArraySum : ' + subarraySum([6,12,1,7,5,2,3], 13));
+
+//===============================================================================================================================
+
