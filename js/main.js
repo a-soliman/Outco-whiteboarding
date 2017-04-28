@@ -720,3 +720,18 @@ console.log('SubArraySum : ' + subarraySum([6,12,1,7,5,2,3], 13));
 
 //===============================================================================================================================
 
+/*
+Remove Duplicates from Sorted Array
+Given a sorted array, remove the duplicates such that each element appears only once. This function should modify the existing array and return the number of the unique elements.
+
+Input: Array of sorted integers
+Output: Integer (length of unique subarray)
+Example
+Input: [1,2,2,2,3,9,9]      	=>	Output: 4 → [1,2,3,9,...]
+Input: [1,1,1,9,9]	           =>	Output: 2 → [1,9,...]
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(1)
+
+What exists beyond the unique elements is unimportant. 
+*/
