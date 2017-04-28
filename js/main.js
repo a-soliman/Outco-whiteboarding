@@ -735,3 +735,16 @@ Auxiliary Space Complexity: O(1)
 
 What exists beyond the unique elements is unimportant. 
 */
+
+function removeDublicates(arr) {
+  var unique = 1;
+  for(var i = 1; i < arr.length; i++) {
+    if(arr[i] !== arr[i-1]) {
+      unique++;
+    }
+  }
+  return unique;
+}
+console.log('removeDublicates : ' + removeDublicates([1,2,2,2,3,9,9]))
+//===============================================================================================================================
+
