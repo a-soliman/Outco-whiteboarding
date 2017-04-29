@@ -768,4 +768,39 @@ Auxiliary Space Complexity: O(MN)
 Values of the array will be digits 0-9.
 */
 
+function matrixSpiral(matrix){
+  if(!matrix.length) { return []; }
+  
+  var yMin = 0, xMin = 0;
+  var yMax = matrix.length-1, xMax = matrix[0].length-1;
+  var results = [];
+  
+  while(xMin <= xMax && yMin <= yMax) {
+    for(var i = xMin; i <= xMax; i++) {
+      results.push(matrix[yMin][i]);
+    }
+    yMin++;
+    for(i = yMin; i <= yMax; i++) {
+      results.push(matrix[i][xMax]);
+    }
+    xMax--;
+    if(yMin <= yMax) {
+      for(i = xMax; i >= xMin; i--) {
+        results.push(matrix[yMax][i]);
+      }
+      yMax--;
+    }
+    if(xMin <= xMax) {
+      for(i = yMax; i >= yMin; i--) {
+        results.push(matrix[i][xMin]);
+      }
+      xMin++;
+    }
+  }
+  return results;
+}
+
+console.log('matrixSpiral : ' + matrixSpiral([[1,2,3],[4,5,6],[7,8,9]]));
+
+//===============================================================================================================================
 
