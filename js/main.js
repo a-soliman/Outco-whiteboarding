@@ -803,4 +803,20 @@ function matrixSpiral(matrix){
 console.log('matrixSpiral : ' + matrixSpiral([[1,2,3],[4,5,6],[7,8,9]]));
 
 //===============================================================================================================================
+/*
+Rat Path
+Given a matrix of bits (values 0 and 1), a rat must find a path from index [0][0] to [n-1][n-1]. The rat can only travel to the right or down, and can only travel on 0 values.
 
+Input: 	Matrix of elements with values either 0 or 1
+Output: Array of two-item arrays indicating the path.
+Example
+Input:     [[0, 0, 0, 1],
+        		[0, 1, 0, 1],
+        		[0, 1, 0, 0],
+        		[0, 0, 1, 0]]
+=> 		[[0, 0], [0, 1], [0, 2], [1, 2], [2, 2], [2, 3], [3, 3]]
+Constraints
+Time Complexity: O()
+Auxiliary Space Complexity: O()
+If not path found, return the following path: [[-1,-1]]
+*/
