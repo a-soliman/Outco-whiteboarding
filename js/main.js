@@ -820,3 +820,25 @@ Time Complexity: O()
 Auxiliary Space Complexity: O()
 If not path found, return the following path: [[-1,-1]]
 */
+
+
+function ratPath(matrix) {
+  var results = [-1,-1];
+  
+  function findPath(i,j, path) {
+    //base cases
+    if(i >= matrix.length || j >= matrix[0].length || matrix[i][j] === 1) {
+      return false;
+    }
+    if(i === matrix.length-1 && j === matrix[0].length-1) {
+      results = path;
+    }
+    return findPath(i+1, j, path.concat([[i+1, j]])) || findPath(i, j+1, path.concat([[i, j+1]]))
+  }
+  findPath(0,0,[[0,0]]);
+  return results;
+}
+
+console.log('ratPath : ' + ratPath([[0, 0, 0, 1],[0, 1, 0, 1],[0, 1, 0, 0],[0, 0, 1, 0]]));
+
+//===============================================================================================================================
