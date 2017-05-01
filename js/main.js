@@ -936,3 +936,36 @@ graph2.addEdge(0,1)
 graph2.addEdge(1,2)
 
 
+/*
+  === End the graph ===
+*/
+
+function isNotCyrcle(graph) {
+  var queue = [graph.vertices[4]];
+  var currentArr = [];
+  var parentArr = [null];
+  var visited = {};
+  var current, currentValue, parent;
+  
+  while(queue.length) {
+    current = queue.shift();
+    currentValue = current.value;
+    currentArr.push(currentValue);
+    visited[currentValue] = true;
+    parent = parentArr[currentArr.length-1];
+    
+    for(var i in current.edges) {
+      if(!visited[current.edges[i].value]) {
+        queue.push(current.edges[i]);
+        parentArr.push(currentValue)
+      }
+      if(visited[current.edges[i].value] && current.edges[i].value !== parent) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+console.log(isNotCyrcle(graph1))
+//===============================================================================================================================
+
