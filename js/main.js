@@ -842,3 +842,28 @@ function ratPath(matrix) {
 console.log('ratPath : ' + ratPath([[0, 0, 0, 1],[0, 1, 0, 1],[0, 1, 0, 0],[0, 0, 1, 0]]));
 
 //===============================================================================================================================
+
+
+/*
+Graph is a Tree
+Given an undirected graph, determine whether or not said graph is a tree.
+
+Input: Undirected Graph
+Output: Boolean
+Example
+Input:
+
+=>	Output: True
+Input:
+		
+=>	Output: False
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(N)
+
+The graph Vertex has the following properties:
+value : an integer
+	edges : a list which contains references to other vertices in the Graph
+
+You may assume the values of the vertices will all be unique.
+*/
