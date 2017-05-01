@@ -867,3 +867,72 @@ value : an integer
 
 You may assume the values of the vertices will all be unique.
 */
+
+/*
+  === Crating a Graph  ===
+*/
+function Vertex(id) {
+  this.id = {value: id, edges: {}}
+  
+  return this.id;
+}
+
+function Graph() {
+  this.vertices = {};
+  this.totalVertices = 0;
+  this.totalEdges = 0;
+}
+
+Graph.prototype.addVertex = function(id) {
+  if(!this.vertices[id]) {
+    this.vertices[id] = new Vertex(id);
+    this.totalVertices++;
+  } else {
+    return;
+  }
+}
+
+Graph.prototype.addEdge = function(id1, id2) {
+  if(!this.vertices[id1] || !this.vertices[id2]) {
+    return null;
+  } else {
+    this.vertices[id1].edges[id2] = this.vertices[id2];
+    this.vertices[id2].edges[id1] = this.vertices[id1];
+    this.totalEdges++;
+  }
+}
+Graph.prototype.getVertax = function (id){
+  if(this.vertices[id]) {
+    return this.vertices[id];
+  } else {
+    return null;
+  }
+};
+
+var graph1 = new Graph();
+graph1.addVertex(3);
+graph1.addVertex(4);
+graph1.addVertex(0);
+graph1.addVertex(1);
+graph1.addVertex(2);
+
+graph1.addEdge(3,4);
+graph1.addEdge(3,0);
+graph1.addEdge(0,2);
+graph1.addEdge(0,1);
+
+// === ===
+var graph2 = new Graph();
+graph2.addVertex(4)
+graph2.addVertex(3)
+graph2.addVertex(0)
+graph2.addVertex(2)
+graph2.addVertex(1)
+
+graph2.addEdge(4,3)
+graph2.addEdge(3,0)
+graph2.addEdge(0,2)
+graph2.addEdge(0,1)
+graph2.addEdge(1,2)
+
+
