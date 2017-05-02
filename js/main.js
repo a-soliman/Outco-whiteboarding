@@ -969,3 +969,23 @@ function isNotCyrcle(graph) {
 console.log(isNotCyrcle(graph1))
 //===============================================================================================================================
 
+/*
+Find 0’s in Boolean Matrix
+Given a matrix with N rows and N columns where elements in the matrix can be either 1 or 0 and each row and column are sorted in ascending order, find the number of 0’s.
+
+Input: Matrix of elements with values either 0 or 1
+Output: An integer which is the count of all 0’s in the matrix
+Example
+Input:    [[0, 0, 0, 1],
+		[0, 0, 1, 1],
+		[0, 1, 1, 1],
+		[0, 1, 1, 1]]
+=>	Output: 7
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(1)
+
+Each row and column of the matrix is sorted in ascending order.
+
+Values of the matrix will be either 0 or 1.
+*/
