@@ -989,3 +989,31 @@ Each row and column of the matrix is sorted in ascending order.
 
 Values of the matrix will be either 0 or 1.
 */
+
+
+var BooleanMatrix = [ [0, 0, 0, 1],
+                  		[0, 0, 1, 1],
+                  		[0, 1, 1, 1],
+                  		[0, 1, 1, 1]
+                  	]
+
+function boolMat(matrix) {
+  let count = 0, row = 0, col = matrix.length-1;
+  
+  while(row < matrix.length && col >= 0) {
+    if(matrix[row][col] === 1) {
+      col -= 1;
+    }
+    else {
+      row += 1;
+      count += (1 + col);
+    }
+  }
+  
+  return count;
+}
+
+console.log('BooleanMatrix : ' + boolMat(BooleanMatrix))
+
+//===============================================================================================================================
+
