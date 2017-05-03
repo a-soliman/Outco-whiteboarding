@@ -1046,3 +1046,26 @@ value : a string
 The graph has a list of all the vertices: Graph.vertices
 The Vertex values are all unique
 */
+
+
+// === Creating the graph ===
+var metro = new Graph();
+metro.addVertex('A');
+metro.addVertex('B');
+metro.addVertex('C');
+metro.addVertex('D');
+metro.addVertex('E');
+metro.addVertex('F');
+metro.addVertex('G');
+
+metro.addEdge('A', 'B');
+metro.addEdge('A', 'C');
+metro.addEdge('A', 'D');
+metro.addEdge('B', 'E');
+metro.addEdge('C', 'F');
+metro.addEdge('D', 'G');
+metro.addEdge('E', 'G');
+metro.addEdge('F', 'G');
+ 
+//console.log(metro)
+// === graph ended ===
