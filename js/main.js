@@ -1069,3 +1069,40 @@ metro.addEdge('F', 'G');
  
 //console.log(metro)
 // === graph ended ===
+
+function shortestPath(graph, start, end) {
+  var distance = {};
+  var visited = {};
+  var queue = [graph.vertices[start]];
+  var current;
+  var currentValue;
+  
+  for(var i in graph.vertices) {
+    if(graph.vertices[i].value === start) {
+      distance[graph.vertices[i].value] = 0;    
+    }
+    else {
+      distance[graph.vertices[i].value] = Number.POSITIVE_INFINITY;
+    }
+    visited[graph.vertices[i].value] = false;
+  }
+   
+  while(queue.length) {
+    current = queue.shift();
+    currentValue = current.value;
+    visited[current.value] = true;
+    
+    for(var j in current.edges) {
+      if(!visited[current.edges[j].value]) {
+        distance[current.edges[j].value] = Math.min(distance[current.edges[j].value], distance[currentValue] +1);
+        queue.push(current.edges[j]);
+      }
+    }
+  }
+  //console.log(distance)
+  return distance[end]
+}
+
+console.log('ShortestPath : ' + shortestPath(metro, 'A', 'F'));
+
+//===============================================================================================================================
