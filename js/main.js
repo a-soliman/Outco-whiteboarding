@@ -1106,3 +1106,8 @@ function shortestPath(graph, start, end) {
 console.log('ShortestPath : ' + shortestPath(metro, 'A', 'F'));
 
 //===============================================================================================================================
+
+
+/*
+  maxConsecutiveSum
+*/
