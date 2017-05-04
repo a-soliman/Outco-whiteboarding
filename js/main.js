@@ -1111,3 +1111,21 @@ console.log('ShortestPath : ' + shortestPath(metro, 'A', 'F'));
 /*
   maxConsecutiveSum
 */
+
+
+function maxConsecutiveSum(arr) {
+  let localMax = arr[0];
+  let ultimateMax = arr[0];
+  
+  for(var i = 1; i < arr.length; i++) {
+    localMax = Math.max(localMax + arr[i], arr[i]);
+    
+    ultimateMax = Math.max(ultimateMax, localMax)
+  }
+  return ultimateMax;
+}
+
+console.log('maxConsecutiveSum : ' + maxConsecutiveSum([6, -1, 3, 5, -10]))
+
+//===============================================================================================================================
+
