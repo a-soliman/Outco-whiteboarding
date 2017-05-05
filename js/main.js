@@ -1132,3 +1132,24 @@ console.log('maxConsecutiveSum : ' + maxConsecutiveSum([6, -1, 3, 5, -10]))
 /*
 latticePath
 */
+
+
+function latticePath(n) {
+  var count =0;
+  
+  function traverse(xCoor, yCoor) {
+    if(xCoor === n && yCoor=== n) {
+      count++;
+      return;
+    } 
+    else if(xCoor > n || yCoor > n ) {
+      return;
+    }
+      traverse(xCoor+1, yCoor);
+      traverse(xCoor, yCoor+1);
+  }
+  traverse(0,0)
+  return count;
+}
+console.log('latticePath: ' + latticePath(2))
+//===============================================================================================================================
