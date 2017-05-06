@@ -1158,3 +1158,27 @@ console.log('latticePath: ' + latticePath(2))
 /*
 latticePathDynamic
 */
+
+function latticePathDynamic(n) {
+  var cache = {};
+  
+  function traverse(xCoor, yCoor) {
+    if(cache[xCoor + ',' + yCoor]) {
+      return cache[xCoor + ',' + yCoor];
+    }
+    else if(xCoor === n && yCoor === n) {
+      return 1;
+    }
+    else if(xCoor > n || yCoor > n) {
+      return 0;
+    }
+    else {
+      cache[xCoor + ',' + yCoor] = traverse(xCoor+1, yCoor) + traverse(xCoor, yCoor+1);
+      return cache[xCoor + ',' + yCoor];
+    }
+  }
+  return traverse(0,0);
+}
+
+console.log('latticePathDynamic: ' + latticePathDynamic(2))
+//===============================================================================================================================
