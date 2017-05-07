@@ -1182,3 +1182,7 @@ function latticePathDynamic(n) {
 
 console.log('latticePathDynamic: ' + latticePathDynamic(2))
 //===============================================================================================================================
+
+/*
+  === nth fibonacci with side efficts ===
+*/
