@@ -1186,3 +1186,18 @@ console.log('latticePathDynamic: ' + latticePathDynamic(2))
 /*
   === nth fibonacci with side efficts ===
 */
+
+function nthFib(n, i , fibonacci) {
+  fibonacci = fibonacci || [0,1];
+  i = i || 2;
+  
+  if(n < 2) { return fibonacci[n]; }
+  fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+  if(n === i) { return fibonacci[i];}
+  
+  return nthFib(n, i+1, fibonacci);
+}
+console.log('nthFib : ' + nthFib(6))
+
+//===============================================================================================================================
+
