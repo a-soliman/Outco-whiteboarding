@@ -1204,5 +1204,26 @@ console.log('nthFib : ' + nthFib(6))
 /*
   === powerSet
 */
+function powerSet(str) {
+  let result = [];
+  let library = {};
+  
+  function traverse(buildUp, depth) {
+    if(depth === str.length){
+      var key = buildUp.split('').sort().join('');
+      if(!library[key]) {
+        result.push(key);
+        library[key] = true;
+      }
+      return;
+    }
+    traverse(buildUp, depth+1);
+    traverse(buildUp+ str[depth], depth+1);
+  }
+  traverse('', 0);
+  return result;
+}
+console.log('powerSet : ' + powerSet('abca'));
 
 
+//===============================================================================================================================
