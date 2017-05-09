@@ -1229,3 +1229,19 @@ console.log('powerSet : ' + powerSet('abca'));
 //===============================================================================================================================
 
 //nthFibDynamic
+
+
+function nthFibDynamic(n) {
+  var fib = [0,1];
+  
+  function search(i) {
+    if(i > n) {return }
+    else {
+      fib[i] = fib[i-1] + fib[i-2]
+    }
+    search(i+1)
+  }
+  search(2)
+  return fib[n]
+}
+console.log(nthFibDynamic(6))
