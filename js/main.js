@@ -1282,3 +1282,25 @@ Recommended to ask the intermediate version with O(N) auxiliary space allowed. T
 Common first round technical screen question for Facebook.
 
 */
+
+//===========================================
+//      === BEGNINNER ===
+function threeSumBeginner(arr, target) {
+  var hash = {};
+  var one, two;
+  for(var i =0; i < arr.length; i++) {
+    hash[arr[i]] = true;
+    
+    for(var j = 0; j < arr.length-1; j++) {
+      var requred = target - (arr[j] + arr[j+1])
+      if(hash[requred]) {
+        return true;
+      } 
+    }
+  }
+  return false;
+}
+
+console.log('threeSum T=O(n2) BEGNINNER : ' + threeSumBeginner([1, -1, 3 ,0, 2], 0))
+
+//===========================================
