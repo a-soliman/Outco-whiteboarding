@@ -1304,3 +1304,25 @@ function threeSumBeginner(arr, target) {
 console.log('threeSum T=O(n2) BEGNINNER : ' + threeSumBeginner([1, -1, 3 ,0, 2], 0))
 
 //===========================================
+
+//      === INTERMEDIATE ===
+function threeSumIntermediate(arr, target) {
+  var hash = {};
+  var required;
+  
+  for(var i = 0; i < arr.length; i++) {
+    hash[arr[i]] = true;
+  }
+  for(i = 0; i < arr.length; i++) {
+    required = target - (arr[i] + arr[i+1])
+    
+    if(hash[required]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log('threeSum T=O(n) ITERMEDIATE : ' + threeSumIntermediate([1, -1, 3 ,0, 2], 0))
+
+//===========================================
