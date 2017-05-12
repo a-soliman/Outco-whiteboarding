@@ -1359,3 +1359,27 @@ function threeSumAdvanced(arr, target) {
   
   
 }
+
+
+function sortInplace(arr) {
+  function devide(start, end) {
+    if(start >= end) { return; }
+    
+    let mid = start;
+    for(let i = start; i < end; i++) {
+      if(arr[i] < arr[end]) {
+        [arr[i], arr[mid]] = [arr[mid], arr[i]];
+        mid++;
+      }
+    }
+    [arr[end], arr[mid]] = [arr[mid], arr[end]];
+    devide(start, mid -1);
+    devide(mid +1, end);
+  }
+  devide(0, arr.length-1);
+  return arr;
+}
+console.log('threeSum S=O(1) ADVANCED : ' + threeSumAdvanced([1, -1, 3 ,0, 2], 0))
+
+//======================================================================================
+
