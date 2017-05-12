@@ -1326,3 +1326,36 @@ function threeSumIntermediate(arr, target) {
 console.log('threeSum T=O(n) ITERMEDIATE : ' + threeSumIntermediate([1, -1, 3 ,0, 2], 0))
 
 //===========================================
+
+//      === ADVANCED ===
+
+function threeSumAdvanced(arr, target) {
+  arr = sortInplace(arr)
+  var m = 0, i = m+1, j = arr.length-1;
+  
+  while(m <= arr.length-3 && j > i && i <= arr.length-2) {
+    if(m === arr.length-3 && i === arr.length-2 && j === arr.length-1 && arr[m] + arr[i] + arr[j] < target) {
+      return false;
+    }
+    if(m === 0 && i === 1 && j ===2 && arr[m] + arr[i] + arr[j] > target) {
+      return false;
+    }
+    if(arr[m] + arr[i] + arr[j] === target) {
+      console.log('m ' + arr[m] + ', i ' + arr[i] +', j ' + arr[j])
+      return true;
+    }
+    if(arr[m] + arr[i] + arr[j] > target) {
+      j--;
+    }
+    if(arr[m] + arr[i] + arr[j] < target) {
+      if(i === arr.length-2) {
+        m++;
+      } else {
+        i++;  
+      }
+    }
+  }
+  return false;
+  
+  
+}
