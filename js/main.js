@@ -1398,3 +1398,58 @@ Time Complexity: O(N)
 Auxiliary Space Complexity: O(N)
 
 */
+function houseRobber(arr) {
+  var result = 0;
+  var a = 0;
+  var b = 1;
+  var c = 2;
+  var d = 3;
+  var teamA, teamB;
+  
+  while(a < arr.length) {
+    if(b < arr.length-1 && d <= arr.length-1) {
+      teamB = arr[b] + arr[d];
+    }
+    
+    if(b <= arr.length-1 && d >= arr.length ) {
+      teamB = arr[b];
+    }
+    if(b > arr.length-1) {
+      teamB = 0;
+    }
+    
+    
+    if(a < arr.length-1 && c <= arr.length-1) {
+      teamA = arr[a] + arr[c];
+    }
+    
+    if(a <= arr.length-1 && c >= arr.length ) {
+      teamA = arr[a];
+    }
+    if(a > arr.length-1) {
+      teamA = 0;
+    }
+    
+    
+    
+    
+    result += Math.max(teamA, teamB);
+    a += 4;
+    b += 4;
+    c += 4;
+    d += 4;
+    console.log('team A : ', teamA)
+    console.log('team B : ', teamB)
+    console.log(result)
+    //break;
+  }
+  return result;
+}
+
+houseRobber([1, 2, 4, 1, 5, 12, 5])
+//houseRobber([1, 2, 3])
+
+
+
+//======================================================================================
+
