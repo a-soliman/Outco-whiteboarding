@@ -1383,3 +1383,18 @@ console.log('threeSum S=O(1) ADVANCED : ' + threeSumAdvanced([1, -1, 3 ,0, 2], 0
 
 //======================================================================================
 
+
+/*
+House Robber
+A house robber has a map of houses and the amount of gold in each home.  The robber knows that if two adjacent homes are robbed, then the neighborhood security system will sound.  Determine the total amount of gold the robber can get without setting off the alarm.
+
+Input: 		Array of Nonnegative Integers
+Output: 	Integer
+Example
+Input: [1, 2, 3]				=>	Output: 4
+Input: [1, 2, 4, 1, 5, 12, 5]	=>	Output: 17
+Constraints
+Time Complexity: O(N)
+Auxiliary Space Complexity: O(N)
+
+*/
