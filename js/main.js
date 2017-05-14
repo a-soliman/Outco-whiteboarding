@@ -1482,3 +1482,46 @@ K is the capacity of the knapsack, N is the number of items
 */
 
 
+function knapsack(values, weights, capacity) {
+  var n = values.length
+  console.log(n);
+  var i ,w,ks = [];
+  
+  
+  values.unshift(0)
+  
+  weights.unshift(0)
+  
+  //creat a matrix of values+1
+  for( i = 0; i<=n; i++) {
+    ks[i]= []
+  }
+  
+  //fill the matrix
+  for(i = 0; i <= n; i++) {
+    for(w = 0; w <= capacity; w++) {
+      //console.log([i,w] + ' v: ' + values[i] +',w : ' + weights[i] )
+      if(i === 0 || w === 0) {
+        ks[i][w] = 0;
+      }
+      else if(weights[i] <= w){
+        ks[i][w] = Math.max(ks[i-1][w], values[i] + ks[i-1][w-weights[i]])
+      }
+      else{
+        ks[i][w] = ks[i-1][w];
+      }
+    }
+  }
+  
+  
+  
+  console.log(ks)
+}
+//knapsack([60, 100, 120], [10, 20, 30], 50)
+knapsack([3, 4, 5], [2, 3, 4], 9)
+
+//===========================================================================================
+
+
+
+
