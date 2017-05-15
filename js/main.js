@@ -1522,6 +1522,22 @@ knapsack([3, 4, 5], [2, 3, 4], 9)
 
 //===========================================================================================
 
+/*
+Longest Palindrome
+Given a string, determine the longest substring that is a palindrome 
+
+Input: A string
+Output: A string which is the longest palindrome
+Example
+Input: ”mydadlikestodriveracecars”
+Output: “racecar”
+Constraints
+Time Complexity: O(N2)
+Auxiliary Space Complexity: O(N).
+Assume lowercase characters and no spaces.
+*/
+
+
 
 
 
