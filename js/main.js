@@ -1538,6 +1538,36 @@ Assume lowercase characters and no spaces.
 */
 
 
+function longestPalindrom(str) {
+  var result = {};
+  var temp;
+  var max = 0;
+  var i, j;
+  
+  for(i = 0; i < str.length; i++) {
+    for(j = i+1; j <str.length; j++) {
+      if(str[i] === str[j]) {
+        
+        temp = str.slice(i ,j+1);
+        if(temp === temp.split('').reverse().join('')) {
+          result[temp.length] = temp;
+          max = Math.max(max, temp.length)
+        }
+      }
+    }
+  }
+  
+  return result[max];
+  //console.log(max)
+  //console.log(result)
+}
+
+
+
+longestPalindrom('mydadlikestodriveracecars')
+
+//====================================================================================================
+
 
 
 
