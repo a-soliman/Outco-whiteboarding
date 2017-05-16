@@ -1567,7 +1567,17 @@ function longestPalindrom(str) {
 longestPalindrom('mydadlikestodriveracecars')
 
 //====================================================================================================
+/*
+Median of Two Sorted Arrays
+Given two sorted array of integers of the same length, determine the median of the combined sorted array.
 
-
-
-
+Input: Two Arrays of Integers
+Output: Float
+Example
+Input:    [1, 12, 15, 26, 38], [2, 13, 17, 30, 45]
+Output:  16 
+(because the median of [1, 2, 12, 13, 15, 17, 26, 30, 38, 45] equals 16)
+Constraints
+Time Complexity: (Intermediate) O(N), (Advanced) O(log(N))
+Auxiliary Space Complexity: O(1).
+*/
