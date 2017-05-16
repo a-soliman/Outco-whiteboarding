@@ -1581,3 +1581,48 @@ Constraints
 Time Complexity: (Intermediate) O(N), (Advanced) O(log(N))
 Auxiliary Space Complexity: O(1).
 */
+
+function findMedian(arr1, arr2) {
+  
+  var n = arr1.length;
+  
+  
+  var newArray = merge(arr1, arr2);
+  
+  if(newArray[n] === newArray[n-1]) {
+    return newArray[n];
+  } else {
+    return (newArray[n] + newArray[n-1]) /2;
+  }
+  
+}
+
+function merge(arr1, arr2) {
+  var newArray= [];
+  var i=0, j = 0;
+  //merge the arrays
+  while(i < arr1.length && j < arr2.length) {
+    if(arr1[i] < arr2[j]) {
+      newArray.push(arr1[i]);
+      i++;
+    }
+    else {
+      newArray.push(arr2[j]);
+      j++;
+    }
+  }
+  while(i < arr1.length) {
+    newArray.push(arr1[i]);
+    i++;
+  }
+  while(j < arr2.length) {
+    newArray.push(arr2[j]);
+    j++;
+  }
+  
+  return newArray;
+}
+
+console.log(findMedian([1, 12, 15, 26, 38], [2, 13, 17, 30, 45]))
+
+//====================================================================================================
