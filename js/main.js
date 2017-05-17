@@ -1643,3 +1643,21 @@ Time Complexity: 		Intermediate: O(∞), 	Advanced: O(MN)
 Auxiliary Space Complexity:	Intermediate: O(∞), 	Advanced: O(N)
 The order of the coins does not matter. Duplicate sets of coins count only once.
 */
+
+
+function coinChangen(coins, value) {
+  var result = Array(value +1).fill(0);
+  result[0] = 1;
+  
+  for(var i = 0; i < coins.length; i++) {
+    var coin = coins[i];
+    
+    for(var j = 1; j < result.length; j++) {
+      if(j >= coin) {
+        result[j] += result[j - coin];
+      }
+    }
+  }
+  return result[value];
+}
+console.log('coinChange : ' + coinChangen([1,2,3], 4))
