@@ -1626,3 +1626,20 @@ function merge(arr1, arr2) {
 console.log(findMedian([1, 12, 15, 26, 38], [2, 13, 17, 30, 45]))
 
 //====================================================================================================
+
+/*
+Coin Change
+Given a value N, and a set of different valued coins how many different ways can we make change from these coin values?  
+
+Input:	 Integer and an Array
+Output: Integer representing number of ways change can be made
+Example
+Input: 4, [1,2,3]		=>	Output: 4
+(there four ways to make change [1,1,1,1],[1,1,2],[2,2],[1,3])
+Input: 10, S = {2,3,5,6}	=>	Output: 5
+(there are five ways [2,2,2,2,2],[2,2,3,3],[2,3,5],[5,5],[2,2,6])
+Constraints
+Time Complexity: 		Intermediate: O(∞), 	Advanced: O(MN) 
+Auxiliary Space Complexity:	Intermediate: O(∞), 	Advanced: O(N)
+The order of the coins does not matter. Duplicate sets of coins count only once.
+*/
