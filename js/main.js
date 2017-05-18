@@ -1679,3 +1679,17 @@ Time Complexity:			O(N)				O(N)
 Auxiliary Space Complexity: 		O(N)				O(1)
 */
 
+
+function trappingRain(arr) {
+  var shortWall = Math.min(arr[0], arr[arr.length-1]);
+  var rainAmount = 0;
+  
+  for(var i = 1; i < arr.length-1; i++) {
+    if(arr[i] <= shortWall) {
+      rainAmount += (shortWall - arr[i])
+    }
+  }
+  return rainAmount
+}
+
+console.log('trappingRain : ' + trappingRain([3,0,2,0,4]))
