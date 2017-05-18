@@ -1661,3 +1661,21 @@ function coinChangen(coins, value) {
   return result[value];
 }
 console.log('coinChange : ' + coinChangen([1,2,3], 4))
+
+//====================================================================================================
+/*
+Trapping Rain Water
+Given an array of integers representing the elevations of rocks, determine the total amount of water that can be trapped between rocks.
+
+Input: 		Array of integers
+Output: 	Integer
+Example
+
+Input: [3, 0, 2, 0, 4]      
+Output: 7
+Constraints
+Advanced			Insane	
+Time Complexity:			O(N)				O(N)
+Auxiliary Space Complexity: 		O(N)				O(1)
+*/
+
